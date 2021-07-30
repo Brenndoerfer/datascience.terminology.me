@@ -5,6 +5,7 @@ import ReactMarkdown from 'react-markdown'
 const gfm = require('remark-gfm')
 const rehypeKatex = require('rehype-katex')
 import remarkMath from 'remark-math'
+import 'katex/dist/katex.min.css'
 
 import { BsBoxArrowDown } from 'react-icons/bs'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
