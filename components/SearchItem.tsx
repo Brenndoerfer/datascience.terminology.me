@@ -59,7 +59,7 @@ export default function SearchItem(props: SearchItemProps) {
                             <div className="p-8">
                                 <section className="">
                                     <h2
-                                        id={item?.data?.title?.toLowerCase().replaceAll(' ', '-')}
+                                        id={item?.data?.title?.toLowerCase().replace(/ /g, '-')}
                                         className={styles.h2Anchor}>
                                         {item.data.title}{item.data.abrv ? ` (${item.data.abrv})` : ''}
                                     </h2>
@@ -75,7 +75,7 @@ export default function SearchItem(props: SearchItemProps) {
                                 </section>
                                 <section>
                                     {
-                                        item?.data?.content?.replaceAll('\n', '').trim().length > 0 ? (
+                                        item?.content?.replace(/\n/g, '').trim().length > 0 ? (
                                             <>
                                                 <h3>Content</h3>
                                                 <div>
@@ -101,7 +101,7 @@ export default function SearchItem(props: SearchItemProps) {
                                             {item.data.tags.length > 0 ?
                                                 item.data.tags.map(tag => {
                                                     return <Link
-                                                        href={`#${tag.toLowerCase().replaceAll(' ', '-')}`}
+                                                        href={`#${tag.toLowerCase().replace(/ /g, '-')}`}
                                                         key={item.hash + tag + 'link'}
                                                     >
                                                         <a key={item.hash + tag} className={styles.relatedTerm} onClick={() => props.resetHandler()}>{tag}</a>
