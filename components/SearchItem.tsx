@@ -75,7 +75,7 @@ export default function SearchItem(props: SearchItemProps) {
                                 </section>
                                 <section>
                                     {
-                                        item.content.replaceAll('\n', '').trim().length > 0 ? (
+                                        item?.data?.content?.replaceAll('\n', '').trim().length > 0 ? (
                                             <>
                                                 <h3>Content</h3>
                                                 <div>
