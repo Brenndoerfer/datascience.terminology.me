@@ -1,0 +1,19 @@
+.letter {
+    @apply inline-block text-sm border border-gray-200 mt-1 text-gray-500 bg-gray-200 px-1 rounded mx-1 transition duration-200 ease-in-out;
+}
+
+.letter:hover {
+    @apply bg-gray-500 text-indigo-50;
+}
+
+.activeLetter {
+    @apply bg-gray-500 text-indigo-50;
+}
+
+/* .letter {
+    @apply text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-gray-600 bg-gray-200;
+}
+
+.letter:last {
+    @apply mr-0 mr-1;
+} */

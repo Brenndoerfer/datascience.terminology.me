@@ -1,0 +1,66 @@
+.searchitem .collapsible {
+    @apply mt-8 bg-gray-100 rounded p-2 text-sm cursor-pointer
+}
+
+.Collapsible__contentOuter {
+    @apply bg-red-500
+}
+
+.searchitem {}
+
+.searchitem p {
+    @apply my-4
+}
+
+.searchitem pre {
+    @apply text-lg
+}
+
+.searchitem img {
+    @apply py-8 mx-auto
+}
+
+.searchitem h2 {
+    @apply text-lg mb-2 uppercase tracking-wide text-indigo-500 font-semibold;
+}
+
+.searchitem h3 {
+    @apply block mt-1 text-lg leading-tight font-medium text-black;
+}
+
+.searchitem pre {
+    @apply my-4 text-sm
+}
+
+.searchitem :not(pre > div)>code {
+    @apply bg-gray-100 p-1 font-mono text-indigo-700 text-sm
+}
+
+.searchitem p {
+    @apply mt-2 text-gray-800;
+}
+
+.itemContainer {
+    @apply bg-white rounded shadow-md overflow-hidden mb-4 border border-indigo-200;
+}
+
+.related {
+    @apply text-sm text-gray-500 mt-1 mb-1 content-center font-semibold;
+}
+
+.relatedTerm {
+    @apply inline-block py-1 px-2 mr-2 my-1 rounded bg-indigo-50 text-indigo-500 text-xs font-medium tracking-widest uppercase transition duration-300 ease-in-out;
+}
+
+.relatedTerm:hover {
+    @apply cursor-pointer bg-indigo-500 text-indigo-50;
+}
+
+.h2Anchor:before {
+    content: '';
+    display: block;
+    position: relative;
+    width: 0;
+    height: 5em;
+    margin-top: -5em
+}
