@@ -59,7 +59,7 @@ export default function SearchItem(props: SearchItemProps) {
                             <div className="p-8">
                                 <section className="">
                                     <h2
-                                        id={item.data.title.toLowerCase().replaceAll(' ', '-')}
+                                        id={item?.data?.title?.toLowerCase().replaceAll(' ', '-')}
                                         className={styles.h2Anchor}>
                                         {item.data.title}{item.data.abrv ? ` (${item.data.abrv})` : ''}
                                     </h2>

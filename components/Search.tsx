@@ -100,7 +100,7 @@ export default function Search(props: SearchProps) {
 
                 if (keys.length == 0) return item
                 else {
-                    let firstChar: string = item.data.title.toLowerCase().substring(0, 1)
+                    let firstChar: string = item?.data?.title?.toLowerCase().substring(0, 1)
                     if (Object.keys(charFilter).includes(firstChar)) {
                         return item
                     }
@@ -111,9 +111,9 @@ export default function Search(props: SearchProps) {
                 console.log(item.data.title.toLowerCase().startsWith(charFilter))
                 return (
                     (
-                        item.data.title.toLowerCase().includes(searchTerm) ||
-                        item.data.abrv?.toLowerCase().includes(searchTerm) ||
-                        item.excerpt.toLowerCase().includes(searchTerm)
+                        item?.data?.title?.toLowerCase().includes(searchTerm) ||
+                        item?.data?.abrv?.toLowerCase().includes(searchTerm) ||
+                        item?.excerpt?.toLowerCase().includes(searchTerm)
                     )
                 )
             }).map((item) => {
