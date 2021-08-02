@@ -1,6 +1,6 @@
 import styles from './Searchitem.module.css'
 import React, { useState } from "react"
-import Image from 'next/Image'
+import Image from 'next/image'
 import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
 const gfm = require('remark-gfm')
