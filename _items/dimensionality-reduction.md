@@ -1,31 +1,44 @@
 ---
-title: 'Dimensionality Reduction'
-tags: ['principal component analysis', 'pca']
-abrv: ''
----
-Dimensionality reduction aims to transform data from a high-dimensional space into a lower dimensional space such that ideally only meaningful properties remain. In a more practical way, dimensionality reductions aims to reduce many features, to few that capture the essence of the data.
-![test](/assets/items/dimensionality-reduction/dimensionality-reduction.jpg)
-
-
-
-`huu` some `inline` code `another`
-
-$$
-L = \frac{1}{2} \rho v^2 S C_L
-$$
-
-```javascript
-function test() {
-    const a = new Array().slice(0)
-    return 0;
-}
-```
-
+title: "Dimensionality Reduction"
+tags: ["principal component analysis", "pca"]
+abrv: ""
 ---
 
-```python
-def test():
-    a, b = my_list[5: -4].reverse()
-    x = [i for i in range 5]
-    pass
-```
+Dimensionality reduction aims to transform data from a high-dimensional space (many varriables) into a low-dimensional space (fewer variables) which still capture the essence of the data.
+
+### Applications of dimensionality reduction
+
+- reduce data size and hence storage requirements
+- most models perform better with fewer dimensions
+- perform noise reduction
+- remove multi-colinearity
+- visualize higher-dimensional data
+
+### Approaches to dimensionality reduction
+
+There are two common approaches to dimensionality reduction
+
+- linear approach
+- non-linear approach
+
+With further classification into two types
+
+- feature selection
+- feature extraction
+
+### Dimensionality reduction techniques
+
+#### Linear
+
+- Principal component analysis (PCA)
+- Non-negative matrix factorization (NMF)
+- Linear Discriminant Analaysis (LDA)
+
+#### Non-linear
+
+- Kernel PCA
+- Linear Discriminant Analaysis (LDA)
+- Generalized discriminant analysis (GDA)
+- Autoencoder
+- t-SNE
+- UMAP

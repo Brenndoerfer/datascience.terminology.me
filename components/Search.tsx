@@ -108,7 +108,6 @@ export default function Search(props: SearchProps) {
 
             })
             .filter(item => {
-                console.log(item.data.title.toLowerCase().startsWith(charFilter))
                 return (
                     (
                         item?.data?.title?.toLowerCase().includes(searchTerm) ||
@@ -121,17 +120,18 @@ export default function Search(props: SearchProps) {
                 let currChar = item.data.title.substring(0, 1).toLowerCase();
                 let splitter = lastChar !== currChar;
                 lastChar = currChar;
-
                 return (
-                    <div key={item.hash + 'wrapper'}>
+                    <div key={item.hash}>
                         {splitter ? (
                             <div className="text-center mt-8">
-                                <span id={currChar} className="text-2xl font-medium text-gray-900" key={'hash' + currChar}>{currChar.toUpperCase()}<br /></span>
+                                <span id={currChar} className="text-2xl font-medium text-gray-900" key={'hash' + currChar + '_char'}>{currChar.toUpperCase()}<br /></span>
                                 <div className="text-center inline-block h-1 w-20 bg-indigo-500 rounded mb-2"></div>
                             </div>
                         )
                             : ''}
-                        <SearchItem key={item.hash} item={item} resetHandler={handleAllClick} />
+
+
+                        <SearchItem key={item.hash + 'searchitem'} item={item} resetHandler={handleAllClick} />
                     </div>
                 )
             })

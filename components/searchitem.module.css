@@ -1,3 +1,10 @@
+.searchitem ul {
+    list-style: square inside none;
+    @apply my-2
+}
+
+.searchitem li {}
+
 .searchitem .collapsible {
     @apply mt-8 bg-gray-100 rounded p-2 text-sm cursor-pointer
 }
@@ -6,10 +13,8 @@
     @apply bg-red-500
 }
 
-.searchitem {}
-
 .searchitem p {
-    @apply my-4
+    @apply my-2 text-gray-700;
 }
 
 .searchitem pre {
@@ -17,27 +22,32 @@
 }
 
 .searchitem img {
-    @apply py-8 mx-auto
+    @apply mt-8 mb-2 mx-auto w-1/2
+}
+
+.searchitem figcaption {
+    @apply text-center text-sm text-gray-500 mb-8
 }
 
 .searchitem h2 {
-    @apply text-lg mb-2 uppercase tracking-wide text-indigo-500 font-semibold;
+    @apply text-xl mb-2 uppercase tracking-wide text-indigo-500 font-bold;
 }
 
 .searchitem h3 {
-    @apply block mt-1 text-lg leading-tight font-medium text-black;
+    @apply block mt-6 mb-2 text-lg leading-tight font-semibold text-indigo-800;
 }
+
+.searchitem h4 {
+    @apply block mt-2 mb-2 text-lg leading-tight font-medium text-indigo-800;
+}
+
 
 .searchitem pre {
     @apply my-4 text-sm
 }
 
 .searchitem :not(pre > div)>code {
-    @apply bg-gray-100 p-1 font-mono text-indigo-700 text-sm
-}
-
-.searchitem p {
-    @apply mt-2 text-gray-800;
+    @apply bg-gray-100 p-1 font-mono text-gray-900 text-sm
 }
 
 .itemContainer {

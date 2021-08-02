@@ -1,7 +1,5 @@
 ---
 title: 'Posterior Probability'
-tags: ['bayesian statistics','entropy']
+tags: ['bayesian statistics']
 abrv: ''
----
-PCA excerpt
 ---

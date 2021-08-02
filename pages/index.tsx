@@ -20,7 +20,6 @@ export default function Home({ allItems }) {
     const handleScroll = () => {
         const position = window.pageYOffset;
         setScrollPosition(position);
-        console.log(position);
     };
     useEffect(() => {
         window.addEventListener('scroll', handleScroll, { passive: true });
@@ -35,6 +34,22 @@ export default function Home({ allItems }) {
             <Head>
                 <title>Data Science & Machine Learning | Terminology.me</title>
                 <meta name="description" content="Machine Learning and Data Science Terminology Explained" />
+                <meta property="og:site_name" content="Machine Learning and Data Science Terminology" />
+                <meta property="og:title” content=Machine Learning and Data Science Terminology" />
+                <meta property="og:description" content="Compact and easy to understand explaination of all data science abd machine learning related terms" />
+                <meta property="og:url" content="https://datascience.terminology.me" />
+                <meta property="og:type" content="website" />
+                <meta property="article:publisher" content="https://datascience.terminology.me" />
+                {/* <meta property="article:section" content="Coding" />
+                <meta property="article:tag" content="Data Science" /> */}
+                {/* <meta property="og:image" content="https://res.cloudinary.com/fay/image/upload/w_1280,h_640,c_fill,q_auto,f_auto/w_860,c_fit,co_rgb:232129,g_west,x_80,y_-60,l_text:Source%20Sans%20Pro_70_line_spacing_-10_semibold:Anyone%20Can%20Map!%20Inspiration%20and%20an%20introduction%20to%20the%20world%20of%20mapping/blog-social-card-1.1" /> */}
+                {/* <meta property="og:image:secure_url" content="https://res.cloudinary.com/fay/image/upload/w_1280,h_640,c_fill,q_auto,f_auto/w_860,c_fit,co_rgb:232129,g_west,x_80,y_-60,l_text:Source%20Sans%20Pro_70_line_spacing_-10_semibold:Anyone%20Can%20Map!%20Inspiration%20and%20an%20introduction%20to%20the%20world%20of%20mapping/blog-social-card-1.1" /> */}
+                {/* <meta property="og:image:width" content="1280" /> */}
+                {/* <meta property="og:image:height" content="640" /> */}
+                {/* <meta property="twitter:card" content="summary_large_image" /> */}
+                {/* <meta property="twitter:image" content="https://res.cloudinary.com/fay/image/upload/w_1280,h_640,c_fill,q_auto,f_auto/w_860,c_fit,co_rgb:232129,g_west,x_80,y_-60,l_text:Source%20Sans%20Pro_70_line_spacing_-10_semibold:Anyone%20Can%20Map!%20Inspiration%20and%20an%20introduction%20to%20the%20world%20of%20mapping/blog-social-card-1.1" /> */}
+                <meta property="twitter:site" content="@terminology.me" />
+
                 <link rel="icon" href="/favicon.ico" />
 
                 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WG49HJC07Y"></script>
@@ -55,14 +70,13 @@ export default function Home({ allItems }) {
                             <div className="text-center">
                                 <h1>Data Science & Machine Learning Terminlogy</h1>
                                 <p className="mt-4 mx-auto max-w-3xl">
-                                    Forgot what that one data science term meant?
-                                    Find a compact and easy to understand explaination of all data science abd machine learning related terms <i>here</i>.
+                                    Compact and easy to understand explaination of all data science abd machine learning related terms
                                 </p>
                                 <div className="mt-8 text-sm">
-                                    <a href="#"><span className="inline-block my-2 mx-2 bg-indigo-100 p-2 rounded text-indigo-900 shadow-sm border border-indigo-300"><span><AiFillExperiment className="inline  mr-1" /></span>Data Science</span></a>
+                                    <a href="#"><span className="inline-block my-2 mx-2 bg-indigo-100 p-2 rounded text-indigo-900 shadow-sm border border-indigo-300"><span><AiFillExperiment className="inline mr-1" /></span>Data Science</span></a>
                                     <span className="opacity-50">
-                                        <span className="inline-block cursor-not-allowed my-2 mx-2 bg-red-100 p-2 rounded text-red-900 shadow-sm border border-red-300"><span><ImDatabase className="inline  mr-1" /></span>Data Engineering </span>
-                                        <span className="inline-block  cursor-not-allowed my-2 mx-2 bg-green-100 p-2 rounded text-green-900 shadow-sm border border-green-300"><span><RiMoneyDollarBoxFill className="inline  mr-1" /></span>Finance</span>
+                                        <span className="inline-block cursor-not-allowed my-2 mx-2 bg-red-100 p-2 rounded text-red-900 shadow-sm border border-red-300"><span><ImDatabase className="inline mr-1" /></span>Data Engineering </span>
+                                        <span className="inline-block  cursor-not-allowed my-2 mx-2 bg-green-100 p-2 rounded text-green-900 shadow-sm border border-green-300"><span><RiMoneyDollarBoxFill className="inline mr-1" /></span>Finance</span>
                                         {/* <span className="mx-2 bg-blue-100 p-2 rounded text-blue-900 shadow-sm border border-blue-300">Cloud </span> */}
                                     </span>
                                 </div>
@@ -132,7 +146,7 @@ export async function getStaticProps() {
         return item
     })
 
-    console.log(allItems);
+    // console.log(allItems);
     // console.log(allItemsWithTags);
 
 

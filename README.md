@@ -1,5 +1,3 @@
-[] add content
-
-[] put online
-[] typescript
-[] clean up CSS 
+* [] remark-img-to-next-image
+* [] typescript types
+* [] clean up CSS 
