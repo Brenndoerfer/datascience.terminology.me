@@ -1,0 +1,12 @@
+[build]
+  command = "next build"
+
+[[plugins]]
+  # Installs the Lighthouse Build Plugin for all deploy contexts
+  package = "@netlify/plugin-lighthouse"
+
+
+[context.production]
+  command = "next build"
+[context.production.environments]
+  BASE_URL = "https://datascience.terminology.me"
