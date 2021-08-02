@@ -41,7 +41,6 @@ export interface Item {
 const components = {
     code({ node, inline, className, children, ...props }) {
 
-        console.log(node);
 
         if (node.children[0].type !== "image") {
             const match = /language-(\w+)/.exec(className || '')
@@ -62,7 +61,6 @@ const components = {
         // }
     },
     img: image => {
-        console.log(image)
         return (
             <div className="w-100 md:w-1/2 mx-auto my-4 md:my-6">
                 <Image src={image.src} alt={image.alt} layout="responsive" width="400" height="200" loading="lazy" placeholder="blur" blurDataURL={image.src} decoding="async" quality="75" />
