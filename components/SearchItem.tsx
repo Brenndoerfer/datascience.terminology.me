@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import styles from './SearchItem.module.css'
+import styles from './Searchitem.module.css'
 import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
 const gfm = require('remark-gfm')
