@@ -1,7 +1,7 @@
+import styles from "./Search.module.css"
 import { useEffect, useRef, useState, MutableRefObject } from 'react';
 import { useHotkeys } from "react-hotkeys-hook";
 import SearchItem, { Item } from './SearchItem';
-import styles from "./Search.module.css"
 import { FaSearch } from 'react-icons/fa'
 import platform from 'platform-detect'
 import Char from './Char';

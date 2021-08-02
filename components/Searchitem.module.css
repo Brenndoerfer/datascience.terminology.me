@@ -3,8 +3,6 @@
     @apply my-2
 }
 
-.searchitem li {}
-
 .searchitem .collapsible {
     @apply mt-8 bg-gray-100 rounded p-2 text-sm cursor-pointer
 }
