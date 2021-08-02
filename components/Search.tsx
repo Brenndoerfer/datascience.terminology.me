@@ -25,20 +25,15 @@ export default function Search(props: SearchProps) {
 
     const ALPHABET = "ABCDEFGHJKLMNOPQRSTUVWXYZ";
 
-    // const charStates = [...new Array(26)].map(() => false)
-    // const charStates =  = ALPHABET.split('').map(item)
 
-    // console.log(charStates);
-
-
-    useHotkeys('cmd+k', () => searchFieldRef?.current?.focus());
-    useHotkeys('ctrl+k', () => searchFieldRef?.current?.focus());
+    useHotkeys('cmd+k', () => searchFieldRef.current.focus());
+    useHotkeys('ctrl+k', () => searchFieldRef.current.focus());
 
 
     useEffect(() => {
         const handleEsc = (event: KeyboardEvent) => {
             if (event.keyCode === 27) {
-                searchFieldRef?.current?.blur()
+                searchFieldRef.current.blur()
             }
         };
         window.addEventListener('keydown', handleEsc);
@@ -100,7 +95,7 @@ export default function Search(props: SearchProps) {
 
                 if (keys.length == 0) return item
                 else {
-                    let firstChar: string = item?.data?.title?.toLowerCase().substring(0, 1)
+                    let firstChar: string = item.data.title.toLowerCase().substring(0, 1)
                     if (Object.keys(charFilter).includes(firstChar)) {
                         return item
                     }
@@ -110,9 +105,9 @@ export default function Search(props: SearchProps) {
             .filter(item => {
                 return (
                     (
-                        item?.data?.title?.toLowerCase().includes(searchTerm) ||
-                        item?.data?.abrv?.toLowerCase().includes(searchTerm) ||
-                        item?.excerpt?.toLowerCase().includes(searchTerm)
+                        item.data.title.toLowerCase().includes(searchTerm) ||
+                        item.data.abrv.toLowerCase().includes(searchTerm) ||
+                        item.excerpt.toLowerCase().includes(searchTerm)
                     )
                 )
             }).map((item) => {
@@ -183,8 +178,6 @@ export default function Search(props: SearchProps) {
                     </div>
                 </div>
             </div>
-
-            {/* <div><pre>{JSON.stringify(charFilter)}</pre></div> */}
 
             <div className="mt-4">{filterItems()}</div>
 

@@ -131,7 +131,7 @@ export async function getStaticProps() {
         // item.excerptHtml = excerptHtml
 
         allTags.push(item.data.tags)
-        allTitles.push(item?.data?.title?.toLowerCase())
+        allTitles.push(item.data.title.toLowerCase())
 
     }))
 

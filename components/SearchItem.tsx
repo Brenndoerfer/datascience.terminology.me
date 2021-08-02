@@ -32,7 +32,6 @@ interface SearchItemProps {
 
 export interface Item {
     title: string,
-    short: string,
     content: string,
     excerpt: string,
     key: string,
@@ -90,12 +89,12 @@ export default function SearchItem(props: SearchItemProps) {
                             <div className="p-8">
                                 <section className="">
                                     <h2
-                                        id={item?.data?.title?.toLowerCase().replace(/ /g, '-')}
+                                        id={item.data.title.toLowerCase().replace(/ /g, '-')}
                                         className={styles.h2Anchor}>
                                         {item.data.title}{item.data.abrv ? ` (${item.data.abrv})` : ''}
                                     </h2>
                                     {
-                                        item?.excerpt?.replace(/\n/g, '').trim().length > 0 ? (
+                                        item.excerpt.replace(/\n/g, '').trim().length > 0 ? (
                                             <div>
                                                 <ReactMarkdown
                                                     components={components}
@@ -104,12 +103,12 @@ export default function SearchItem(props: SearchItemProps) {
                                                     children={item.excerpt}
                                                 />
                                             </div>
-                                        ) : (item?.content?.replace(/\n/g, '').trim().length == 0 ? <div className="text-gray-500">Content in progress</div> : '')
+                                        ) : (item.content.replace(/\n/g, '').trim().length == 0 ? <div className="text-gray-500">Content in progress</div> : '')
                                     }
                                 </section>
                                 <section>
                                     {
-                                        item?.content?.replace(/\n/g, '').trim().length > 0 ? (
+                                        item.content.replace(/\n/g, '').trim().length > 0 ? (
                                             <>
                                                 <div>
                                                     <ReactMarkdown
