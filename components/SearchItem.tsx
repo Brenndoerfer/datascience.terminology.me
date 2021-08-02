@@ -1,5 +1,6 @@
 import styles from './Searchitem.module.css'
 import React, { useState } from "react"
+import Image from 'next/Image'
 import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
 const gfm = require('remark-gfm')
@@ -9,7 +10,6 @@ import 'katex/dist/katex.min.css'
 const footnotes = require('remark-footnotes')
 import rehypeTitleFigure from 'rehype-title-figure'
 var unwrapImages = require('remark-unwrap-images')
-import Image from 'next/Image'
 
 import { BsBoxArrowDown } from 'react-icons/bs'
 import { GrGrow } from 'react-icons/Gr'
