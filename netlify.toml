@@ -1,5 +1,7 @@
 [build]
   command = "next build"
+  publish = "out"
+
 
 [[plugins]]
   # Installs the Lighthouse Build Plugin for all deploy contexts
