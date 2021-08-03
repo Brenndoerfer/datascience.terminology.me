@@ -40,7 +40,7 @@ export function getItemsBySlug(slug: string, fields: (string[] | []) = []) {
     if (items.data.title.length == 0) {
         items.data.title = realSlug.replace(/-/g, ' ');
     }
-    items.hash = sha1(data?.title)
+    items.hash = sha1(data.title)
 
     // console.log(matter(fileContents, { excerpt: true }))
     // items['excerptHtml'] = markdownToHtml(items.content)

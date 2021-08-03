@@ -8,7 +8,6 @@ const rehypeKatex = require('rehype-katex')
 import remarkMath from 'remark-math'
 import 'katex/dist/katex.min.css'
 const footnotes = require('remark-footnotes')
-import rehypeTitleFigure from 'rehype-title-figure'
 var unwrapImages = require('remark-unwrap-images')
 
 import { BsBoxArrowDown } from 'react-icons/bs'
@@ -99,7 +98,7 @@ export default function SearchItem(props: SearchItemProps) {
                                                 <ReactMarkdown
                                                     components={components}
                                                     remarkPlugins={[unwrapImages, [gfm, { singleTilde: false }], remarkMath, [footnotes, { inlineNotes: true }]]}
-                                                    rehypePlugins={[rehypeKatex, rehypeTitleFigure]} // rehypeTitleFigure
+                                                    rehypePlugins={[rehypeKatex]} // rehypeTitleFigure
                                                     children={item.excerpt}
                                                 />
                                             </div>
@@ -114,7 +113,7 @@ export default function SearchItem(props: SearchItemProps) {
                                                     <ReactMarkdown
                                                         components={components}
                                                         remarkPlugins={[unwrapImages, [gfm, { singleTilde: false }], remarkMath, [footnotes, { inlineNotes: true }]]}
-                                                        rehypePlugins={[rehypeKatex, rehypeTitleFigure]} // rehypeTitleFigure
+                                                        rehypePlugins={[rehypeKatex]} // rehypeTitleFigure
                                                         children={item.content}
                                                     />
                                                 </div>
