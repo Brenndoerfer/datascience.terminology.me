@@ -38,7 +38,7 @@ export function getItemsBySlug(slug: string, fields: (string[] | []) = []): Item
 
     allTags.push(data.tags)
 
-    let contentWithoutExcerpt = ''
+    let contentWithoutExcerpt = content
     if (excerpt) {
         contentWithoutExcerpt = content.replace(excerpt, '').replace('---\n', '')
     }
@@ -49,11 +49,12 @@ export function getItemsBySlug(slug: string, fields: (string[] | []) = []): Item
     }
     items.hash = sha1(data.title)
 
+    console.log(items)
     return items as Item
 }
 
 
-// TODO remove fields
+// TOD remove fields
 export function getAllItems(fields: (string[] | []) = []): Item[] {
     const slugs = getItemsSlugs()
 

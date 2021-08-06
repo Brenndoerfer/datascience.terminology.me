@@ -22,6 +22,7 @@ export interface Item {
 
 export default function Home({ allItems }: { allItems: Item[] }) {
 
+    console.log(allItems)
 
     return (
         <div >
