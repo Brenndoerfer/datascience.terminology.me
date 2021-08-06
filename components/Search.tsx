@@ -1,16 +1,16 @@
 import styles from "./Search.module.css"
 import { useEffect, useRef, useState } from 'react';
 import { useHotkeys } from "react-hotkeys-hook";
-import SearchItem, { Item } from './SearchItem';
 import { FaSearch } from 'react-icons/fa'
 import platform from 'platform-detect'
 import Char from './Char';
+import { Item } from '../pages/index';
+import SearchItem from './SearchItem';
 const classNames = require('classnames');
 
 interface SearchProps {
-    items: [Item]
+    items: Item[]
 }
-
 
 export default function Search(props: SearchProps) {
 
@@ -104,9 +104,9 @@ export default function Search(props: SearchProps) {
             .filter(item => {
                 return (
                     (
-                        item.data.title.toLowerCase().includes(searchTerm) ||
-                        item.data.abrv.toLowerCase().includes(searchTerm) ||
-                        item.excerpt.toLowerCase().includes(searchTerm)
+                        item.data?.title?.toLowerCase().includes(searchTerm) ||
+                        item.data?.abrv?.toLowerCase().includes(searchTerm) ||
+                        item?.excerpt?.toLowerCase().includes(searchTerm)
                     )
                 )
             }).map((item) => {

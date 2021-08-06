@@ -1,14 +1,26 @@
 import dynamic from "next/dynamic";
-const Search = dynamic(() => import('../components/Search'));
 import { getAllItems } from '../lib/loading';
-import markdownToHtml from '../lib/mdToHtml';
 import Meta from '../components/Meta';
 import Header from '../components/Header';
-const Footer = dynamic(() => import('../components/Footer'));
 import Layout from '../components/Layout';
+const Footer = dynamic(() => import('../components/Footer'));
 const GoToTop = dynamic(() => import('../components/GoToTop'));
+const Search = dynamic(() => import('../components/Search'));
 
-export default function Home({ allItems }) {
+
+export interface ItemData {
+    title: string,
+    tags: string[],
+    abrv: string
+}
+export interface Item {
+    data: ItemData,
+    excerpt: string,
+    content: string,
+    hash: string
+}
+
+export default function Home({ allItems }: { allItems: Item[] }) {
 
 
     return (
@@ -21,39 +33,33 @@ export default function Home({ allItems }) {
             </Layout>
 
             <Footer />
-
             <GoToTop />
-
-
 
         </div >
     )
 }
 
 export async function getStaticProps() {
-    const allItems = getAllItems();
+    const allItems: Item[] = getAllItems();
 
-    var allTags: (string[] | [string[]]) = []
-    var allTitles: (string[] | [string[]]) = []
+    // var allTags: string[][] = []
+    var allTitles: string[] = []
 
     await Promise.all(allItems.map(async (item) => {
-        const excerptHtml = await markdownToHtml(item.excerpt)
-        const contentHtml = await markdownToHtml(item.content.replace('<!-- sep -->', ''))
 
-        // item.contentHtml = contentHtml
-        // item.excerptHtml = excerptHtml
-
-        allTags.push(item.data.tags)
+        // allTags.push(item.data.tags)
         allTitles.push(item.data.title.toLowerCase())
 
     }))
 
-    allTags = allTags.flat().map(tag => tag.toLowerCase());
+    // allTags = allTags.flat().map(tag => tag.toLowerCase());
 
     const allItemsWithTags = allItems.map(item => {
-        item.data['tags'] = item.data.tags.filter(tag => allTitles.includes(tag))
+        item.data.tags = item.data.tags.filter(tag => allTitles.includes(tag))
         return item
     })
+
+    // console.log(allItemsWithTags)
 
 
     return {

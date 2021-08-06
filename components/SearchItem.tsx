@@ -7,7 +7,7 @@ const gfm = require('remark-gfm')
 const rehypeKatex = require('rehype-katex')
 import remarkMath from 'remark-math'
 import 'katex/dist/katex.min.css'
-const footnotes = require('remark-footnotes')
+// import footnotes from 'remark-footnotes'
 var unwrapImages = require('remark-unwrap-images')
 
 import { BsBoxArrowDown } from 'react-icons/bs'
@@ -28,12 +28,6 @@ interface SearchItemProps {
     item: Item
 }
 
-export interface Item {
-    title: string,
-    content: string,
-    excerpt: string,
-    key: string,
-}
 
 const components = {
     code({ node, inline, className, children, ...props }) {
@@ -96,7 +90,7 @@ export default function SearchItem(props: SearchItemProps) {
                                             <div>
                                                 <ReactMarkdown
                                                     components={components}
-                                                    remarkPlugins={[unwrapImages, [gfm, { singleTilde: false }], remarkMath, [footnotes, { inlineNotes: true }]]}
+                                                    remarkPlugins={[unwrapImages, [gfm, { singleTilde: false }], remarkMath]} // [footnotes, { inlineNotes: true }]
                                                     rehypePlugins={[rehypeKatex]} // rehypeTitleFigure
                                                     children={item.excerpt}
                                                 />
@@ -111,7 +105,7 @@ export default function SearchItem(props: SearchItemProps) {
                                                 <div>
                                                     <ReactMarkdown
                                                         components={components}
-                                                        remarkPlugins={[unwrapImages, [gfm, { singleTilde: false }], remarkMath, [footnotes, { inlineNotes: true }]]}
+                                                        remarkPlugins={[unwrapImages, [gfm, { singleTilde: false }], remarkMath]} // [footnotes, { inlineNotes: true }]
                                                         rehypePlugins={[rehypeKatex]} // rehypeTitleFigure
                                                         children={item.content}
                                                     />
