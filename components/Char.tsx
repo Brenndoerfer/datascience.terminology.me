@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./Search.module.css"
-import classNames from 'classnames';
+const classNames = require('classnames');
 
 export default function Char(props) {
 

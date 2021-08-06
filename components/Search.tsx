@@ -1,12 +1,11 @@
 import styles from "./Search.module.css"
-import { useEffect, useRef, useState, MutableRefObject } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useHotkeys } from "react-hotkeys-hook";
 import SearchItem, { Item } from './SearchItem';
 import { FaSearch } from 'react-icons/fa'
 import platform from 'platform-detect'
 import Char from './Char';
-import classNames from 'classnames';
-import Link from 'next/link';
+const classNames = require('classnames');
 
 interface SearchProps {
     items: [Item]
