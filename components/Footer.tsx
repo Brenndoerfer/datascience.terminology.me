@@ -9,7 +9,7 @@ export default function Footer() {
                         <div className="mb-4">How to contribute: <b>Coming soon</b></div>
                         <div>Data Science and Machine Learning Terminology</div>
                         <div>https://datascience.terminology.me</div>
-                        <div className="mt-4 text-sm">Created by <a href="https://michaelbrenndoerfer.com" target="_blank">Michael Brenndoefer</a>
+                        <div className="mt-4 text-sm">Created by <a href="https://michaelbrenndoerfer.com" target="_blank">Michael Brenndoerfer</a>
                             <a href="https://www.linkedin.com/in/michaelbrenndoerfer/" target="_blank"><span><AiFillLinkedin className="inline mx-1"></AiFillLinkedin></span></a>
                             <a href="https://github.com/Brenndoerfer" target="_blank"><span><AiFillGithub className="inline mx-1"></AiFillGithub></span></a>
                         </div>

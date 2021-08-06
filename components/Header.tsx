@@ -9,9 +9,9 @@ export default function Header() {
                 <div className="w-100 bg-white mb-8  p-4">
                     <div className="max-w-6xl mx-auto pt-8 pb-16 text-md text-gray-500">
                         <div className="text-center">
-                            <h1>Data Science & Machine Learning Terminlogy</h1>
+                            <h1>Data Science & Machine Learning Terminology</h1>
                             <p className="mt-4 mx-auto max-w-3xl">
-                                Compact and easy to understand explaination of all data science abd machine learning related terms
+                                Compact and clear explainations of data science and machine learning related terms
                             </p>
                             <div className="mt-8 text-sm">
                                 <a href="#">

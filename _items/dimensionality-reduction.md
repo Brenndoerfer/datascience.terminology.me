@@ -4,7 +4,7 @@ tags: ["principal component analysis", "pca"]
 abrv: ""
 ---
 
-Dimensionality reduction aims to transform data from a high-dimensional space (many varriables) into a low-dimensional space (fewer variables) which still capture the essence of the data.
+Dimensionality reduction aims to transform data from a high-dimensional space (many varriables) into a low-dimensional space (fewer variables) which still captures the essence of the data.
 
 ### Applications of dimensionality reduction
 

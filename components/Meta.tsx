@@ -9,7 +9,7 @@ export default function Meta() {
                 <meta property="og:locale" content="en_US" />
                 <meta property="og:site_name" content="Machine Learning and Data Science Terminology" />
                 <meta property="og:title” content=Machine Learning and Data Science Terminology" />
-                <meta property="og:description" content="Compact and easy to understand explaination of all data science abd machine learning related terms" />
+                <meta property="og:description" content="Compact and easy to understand explanation of all data science abd machine learning related terms" />
                 <meta property="og:url" content="https://datascience.terminology.me" />
                 <meta property="og:type" content="website" />
                 <meta property="og:image" content="https://datascience.terminology.me/assets/og/og_cover.jpg" />

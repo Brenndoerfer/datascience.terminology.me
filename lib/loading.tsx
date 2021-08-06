@@ -13,16 +13,16 @@ export function getItemsSlugs() {
 }
 
 // TODO remove?
-function date_to_month_year(dateString: string): [string, string] | undefined {
-    const date = parseISO(dateString)
-    try {
-        let month = format(date, 'LLLL')
-        let year = format(date, 'yyyy')
-        return [month, year]
-    } catch (e) {
-        console.error("Cannot parse date `e`", e)
-    }
-}
+// function date_to_month_year(dateString: string): [string, string] | undefined {
+//     const date = parseISO(dateString)
+//     try {
+//         let month = format(date, 'LLLL')
+//         let year = format(date, 'yyyy')
+//         return [month, year]
+//     } catch (e) {
+//         console.error("Cannot parse date `e`", e)
+//     }
+// }
 
 export interface MatterResult {
     data: ({ [key: string]: any } | ItemData)
@@ -30,7 +30,7 @@ export interface MatterResult {
     excerpt?: string
 }
 
-export function getItemsBySlug(slug: string, fields: (string[] | []) = []): Item {
+export function getItemsBySlug(slug: string): Item {
     const realSlug = slug.replace(/\.md$/, '')
     const fullPath = join(itemsDirectory, `${realSlug}.md`)
     const fileContents = fs.readFileSync(fullPath, 'utf8')
@@ -49,18 +49,18 @@ export function getItemsBySlug(slug: string, fields: (string[] | []) = []): Item
     }
     items.hash = sha1(data.title)
 
-    console.log(items)
+    // console.log(items)
     return items as Item
 }
 
 
 // TOD remove fields
-export function getAllItems(fields: (string[] | []) = []): Item[] {
+export function getAllItems(): Item[] {
     const slugs = getItemsSlugs()
 
     let hashes: string[] = []
     const items: Item[] = slugs
-        .map(slug => getItemsBySlug(slug, fields))
+        .map(slug => getItemsBySlug(slug))
         .sort((post1, post2) => (post1.data.title.toLowerCase() > post2.data.title.toLowerCase() ? 1 : -1))
 
 
