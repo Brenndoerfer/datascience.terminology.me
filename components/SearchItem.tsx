@@ -14,7 +14,6 @@ import { BsBoxArrowDown } from 'react-icons/bs'
 import { GrGrow } from 'react-icons/Gr'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vs } from 'react-syntax-highlighter/dist/cjs/styles/prism';
-import Collapsible from 'react-collapsible';
 // import { Components } from 'react-markdown'
 // import remarkNextImage from '../../../npm/remark-next-image'
 
