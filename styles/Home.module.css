@@ -1,5 +1,5 @@
 .scrollTopBtn {
-    @apply text-white p-2 shadow-lg invisible fixed z-50 border bg-indigo-500 cursor-pointer rounded bottom-5 right-5 transition duration-300 ease-in-out;
+    @apply text-white p-4 shadow-lg invisible fixed z-50 border bg-indigo-500 cursor-pointer rounded bottom-8 right-8 transition duration-300 ease-in-out;
 }
 
 .scrollTopBtn:hover {

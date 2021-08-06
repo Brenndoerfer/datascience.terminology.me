@@ -11,7 +11,7 @@ export default function Header() {
                         <div className="text-center">
                             <h1>Data Science & Machine Learning Terminology</h1>
                             <p className="mt-4 mx-auto max-w-3xl">
-                                Compact and clear explainations of data science and machine learning related terms
+                                Compact and easy to understand explanations of data science and machine learning related terms
                             </p>
                             <div className="mt-8 text-sm">
                                 <a href="#">
