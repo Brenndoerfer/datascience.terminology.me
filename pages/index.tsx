@@ -12,6 +12,7 @@ export interface ItemData {
     title: string,
     tags: string[],
     abrv: string
+    draft?: boolean
 }
 export interface Item {
     data: ItemData,
@@ -23,6 +24,7 @@ export interface Item {
 export default function Home({ allItems }: { allItems: Item[] }) {
 
     console.log(allItems)
+
 
     return (
         <div >
@@ -49,14 +51,14 @@ export async function getStaticProps() {
     await Promise.all(allItems.map(async (item) => {
 
         // allTags.push(item.data.tags)
-        allTitles.push(item.data.title.toLowerCase())
+        allTitles.push(item.data.title.toLowerCase().replace(/[^a-zA-Z0-9]/g, ''))
 
     }))
 
     // allTags = allTags.flat().map(tag => tag.toLowerCase());
 
     const allItemsWithTags = allItems.map(item => {
-        item.data.tags = item.data.tags.filter(tag => allTitles.includes(tag))
+        item.data.tags = item.data.tags.filter(tag => allTitles.includes(tag.toLowerCase().replace(/[^a-zA-Z0-9]/g, '')))
         return item
     })
 

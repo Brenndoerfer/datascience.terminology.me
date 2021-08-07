@@ -1,6 +1,5 @@
 ---
-title: ''
-tags: ['']
+title: "Bayes theorem"
+tags: [""]
 abrv: null
 ---
-

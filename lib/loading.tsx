@@ -61,6 +61,7 @@ export function getAllItems(): Item[] {
     let hashes: string[] = []
     const items: Item[] = slugs
         .map(slug => getItemsBySlug(slug))
+        .filter(post => !post.data?.draft || (post.data?.draft && post.content.length == 0 && post.excerpt.length == 0))
         .sort((post1, post2) => (post1.data.title.toLowerCase() > post2.data.title.toLowerCase() ? 1 : -1))
 
 

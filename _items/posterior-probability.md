@@ -1,5 +1,5 @@
 ---
-title: 'Posterior Probability'
-tags: ['bayesian statistics']
-abrv: ''
+title: "Posterior Probability"
+tags: ["bayesian statistics", "bayesian inference"]
+abrv: ""
 ---

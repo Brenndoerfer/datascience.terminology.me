@@ -65,6 +65,15 @@ export default function Search(props: SearchProps) {
         setCharFilter(newState);
     }
 
+    function charInFilter(char: string): boolean {
+        let keys = Object.keys(charFilter);
+        if (keys.length == 0) return false
+        else {
+            if (keys.includes(char)) return true
+        }
+        return false
+    }
+
     function letterFilter() {
         return ALPHABET
             .split('')
@@ -72,7 +81,7 @@ export default function Search(props: SearchProps) {
                 <Char
                     key={char}
                     char={char}
-                    style={classNames(styles.letter, { [styles.activeLetter]: charFilter.hasOwnProperty(char.toLowerCase()) })}
+                    style={classNames(styles.letter, { [styles.activeLetter]: charInFilter(char) })}
                     onPress={handleCharClick}
                 // active={charFilter.hasOwnProperty(char.toLowerCase())}
                 />
@@ -95,7 +104,7 @@ export default function Search(props: SearchProps) {
                 if (keys.length == 0) return item
                 else {
                     let firstChar: string = item.data.title.toLowerCase().substring(0, 1)
-                    if (Object.keys(charFilter).includes(firstChar)) {
+                    if (keys.includes(firstChar)) {
                         return item
                     }
                 }

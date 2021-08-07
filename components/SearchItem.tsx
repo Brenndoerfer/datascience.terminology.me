@@ -80,11 +80,11 @@ export default function SearchItem(props: SearchItemProps) {
                         <div className="">
                             <div className="p-8">
                                 <section className="">
-                                    <h2
+                                    <Link href={'#' + item.data.title.toLowerCase().replace(/ /g, '-')} passHref><h2
                                         id={item.data.title.toLowerCase().replace(/ /g, '-')}
                                         className={styles.h2Anchor}>
                                         {item.data.title}{item.data.abrv ? ` (${item.data.abrv})` : ''}
-                                    </h2>
+                                    </h2></Link>
                                     {
                                         item.excerpt.replace(/\n/g, '').trim().length > 0 ? (
                                             <div>
