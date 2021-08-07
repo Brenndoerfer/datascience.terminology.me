@@ -35,13 +35,13 @@ Bayesian interference is aiming to describe the probability (or as it's called, 
 - Credible intervals
 - Bayesian factors
 
-### Interfernce models
+### Interference models
 
 Statistical interference requires assumptions. Those assumptions form a statistical model. A set of assumptions describe the generation of data similar to the observed data. Data and hence the models generating it fall into three categories:
 
 - **Fully parametric** means that the number of parameters in the model are finite. The parameters in the model are able to fully describe the data generating process
 - **Non-parametric** means that the numbers of parameters in the model are infite and hence cannot be captured by parameters, for example when the data is distribution free
-- **Semi-parametrized** means that the model has some parametric as well as nonparametric components. It has anywhere between infitie and finite parameters
+- **Semi-parametric** means that the model has some parametric as well as nonparametric components. It has anywhere between infitie and finite parameters
 
 ### Outputs of statistical inference
 
