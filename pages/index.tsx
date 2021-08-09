@@ -11,7 +11,7 @@ import Search from '../components/Search';
 
 export default function Home({ allItems }: { allItems: Item[] }) {
 
-    console.log(allItems)
+    // console.log(allItems)
 
 
     return (
