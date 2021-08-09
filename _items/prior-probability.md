@@ -20,4 +20,4 @@ The prior probability will be updated as additional information becomes availabl
 
 We want to predict if a certain soccer player will score a goal in a certain match. We do have prior observations about the players and the teams' performance. This is our prior probability. Let's call it event A.
 
-During the game, an additional event, event B, affects the probability of event A occurred. With this additional information, we can formulate the posterior. Because event B is affecting event A and because event B happened after event A, we can revise our prior probability of event A occurring.
+During the game, an additional event, event B, which affects the probability of event A occurred. With this additional information, we can formulate the posterior. Because event B is affecting event A and because event B happened after event A, we can revise our prior probability of event A occurring. It's now our posterior probability.
