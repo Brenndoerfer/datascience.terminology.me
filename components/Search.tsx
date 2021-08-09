@@ -4,8 +4,9 @@ import { useHotkeys } from "react-hotkeys-hook";
 import { FaSearch } from 'react-icons/fa'
 import platform from 'platform-detect'
 import Char from './Char';
-import { Item } from '../pages/index';
+import { Item } from "../pages/ItemData";
 import SearchItem from './SearchItem';
+import { platformShortcut, handleEsc } from "../lib/platform";
 const classNames = require('classnames');
 
 interface SearchProps {
@@ -15,7 +16,7 @@ interface SearchProps {
 export default function Search(props: SearchProps) {
 
 
-    const searchFieldRef = useRef<HTMLInputElement>(null);
+    const searchFieldRef = useRef(null);
 
     const [items, setItems] = useState(props.items)
     const [charFilter, setCharFilter] = useState({});
@@ -29,28 +30,8 @@ export default function Search(props: SearchProps) {
     useHotkeys('ctrl+k', () => searchFieldRef.current.focus());
 
 
-    useEffect(() => {
-        const handleEsc = (event: KeyboardEvent) => {
-            if (event.keyCode === 27) {
-                searchFieldRef.current.blur()
-            }
-        };
-        window.addEventListener('keydown', handleEsc);
+    useEffect(() => handleEsc(searchFieldRef), []);
 
-        return () => {
-            window.removeEventListener('keydown', handleEsc);
-        };
-    }, []);
-
-    function platformShortcut() {
-        if (platform.windows) {
-            return "(CTRL+K)"
-        }
-        if (platform.macos) {
-            return "(⌘+K)"
-        }
-        return ""
-    }
 
     function handleCharClick(char: string) {
         let newState = { ...charFilter }
@@ -134,7 +115,7 @@ export default function Search(props: SearchProps) {
                             : ''}
 
 
-                        <SearchItem key={item.hash + 'searchitem'} item={item} resetHandler={handleAllClick} />
+                        <SearchItem key={item.hash + 'searchitem'} item={item} />
                     </div>
                 )
             })

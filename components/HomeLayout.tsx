@@ -1,4 +1,4 @@
-export default function Layout({ children }) {
+export default function HomeLayout({ children }) {
     return (
         <>
             <main className="bg-indigo-50 pb-16">

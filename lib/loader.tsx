@@ -3,31 +3,13 @@ import { parseISO, format } from 'date-fns'
 import { join } from 'path'
 import matter from 'gray-matter';
 import sha1 from 'js-sha1';
-import { Item, ItemData } from '../pages/index';
+import { Item, MatterResult } from './IItemData';
 
 const itemsDirectory = join(process.cwd(), '_items')
 const allTags: string[] = [];
 
 export function getItemsSlugs() {
     return fs.readdirSync(itemsDirectory).filter(file => file.toLowerCase() !== '_.md')
-}
-
-// TODO remove?
-// function date_to_month_year(dateString: string): [string, string] | undefined {
-//     const date = parseISO(dateString)
-//     try {
-//         let month = format(date, 'LLLL')
-//         let year = format(date, 'yyyy')
-//         return [month, year]
-//     } catch (e) {
-//         console.error("Cannot parse date `e`", e)
-//     }
-// }
-
-export interface MatterResult {
-    data: ({ [key: string]: any } | ItemData)
-    content: string
-    excerpt?: string
 }
 
 export function getItemsBySlug(slug: string): Item {
@@ -43,11 +25,16 @@ export function getItemsBySlug(slug: string): Item {
         contentWithoutExcerpt = content.replace(excerpt, '').replace('---\n', '')
     }
 
-    const items = { data, excerpt, content: contentWithoutExcerpt, hash: '' }
-    if (items.data.title.length == 0) {
-        items.data.title = realSlug.replace(/-/g, ' ');
+    if (data.title.length == 0) {
+        data.title = realSlug.replace(/-/g, ' ');
     }
-    items.hash = sha1(data.title)
+    const items = {
+        data,
+        excerpt,
+        content: contentWithoutExcerpt,
+        hash: sha1(data.title),
+        slug: realSlug.toLowerCase().replace(/[^a-zA-Z0-9-]/g, '')
+    }
 
     // console.log(items)
     return items as Item

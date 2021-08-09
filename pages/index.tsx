@@ -1,25 +1,13 @@
-import dynamic from "next/dynamic";
-import { getAllItems } from '../lib/loading';
+// import dynamic from "next/dynamic";
+import { getAllItems } from '../lib/loader';
 import Meta from '../components/Meta';
 import Header from '../components/Header';
-import Layout from '../components/Layout';
-const Footer = dynamic(() => import('../components/Footer'));
-const GoToTop = dynamic(() => import('../components/GoToTop'));
-const Search = dynamic(() => import('../components/Search'));
+import HomeLayout from '../components/HomeLayout';
+import { Item } from "../lib/IItemData";
+import Footer from '../components/Footer';
+import GoToTop from '../components/GoToTop';
+import Search from '../components/Search';
 
-
-export interface ItemData {
-    title: string,
-    tags: string[],
-    abrv: string
-    draft?: boolean
-}
-export interface Item {
-    data: ItemData,
-    excerpt: string,
-    content: string,
-    hash: string
-}
 
 export default function Home({ allItems }: { allItems: Item[] }) {
 
@@ -31,9 +19,9 @@ export default function Home({ allItems }: { allItems: Item[] }) {
             <Meta />
             <Header />
 
-            <Layout>
+            <HomeLayout>
                 <Search items={allItems}></Search>
-            </Layout>
+            </HomeLayout>
 
             <Footer />
             <GoToTop />

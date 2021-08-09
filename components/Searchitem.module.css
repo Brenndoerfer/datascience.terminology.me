@@ -2,6 +2,7 @@
     @apply my-2 pl-4 ml-2 text-gray-800
 }
 
+
 .searchitem ul>li {
     list-style: square inside none;
     @apply my-2 text-gray-800
@@ -90,7 +91,7 @@
 }
 
 .itemContainer {
-    @apply bg-white rounded shadow-md overflow-hidden mb-4 border border-indigo-200;
+    @apply bg-white shadow-sm overflow-hidden mb-4 border border-indigo-200;
 }
 
 .related {

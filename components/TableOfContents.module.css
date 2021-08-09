@@ -1,0 +1,24 @@
+.toc {}
+
+
+.toc .stickyNav {
+    @apply sticky top-24 z-10 px-4
+}
+
+.toc li>a {
+    @apply text-gray-500 no-underline capitalize;
+
+}
+
+.toc li.active>a {
+    @apply text-indigo-800 font-semibold
+}
+
+
+.toc li>a:hover {
+    @apply text-indigo-500
+}
+
+.toc .title {
+    @apply text-black text-lg;
+}

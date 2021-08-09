@@ -1,4 +1,6 @@
-module.exports = {
+const withTM = require('next-transpile-modules')(['rehype-autolink-headings']);
+
+module.exports = withTM({
     reactStrictMode: true,
     typescript: {
         // !! WARN !!
@@ -7,4 +9,4 @@ module.exports = {
         // !! WARN !!
         ignoreBuildErrors: true,
     },
-}
+})
